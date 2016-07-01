@@ -1,0 +1,46 @@
+{
+  "name": "puremvc",
+  "version": "2.0.0",
+  "description": "PureMVC is a lightweight framework for creating applications based upon the classic [Model-View-Controller](http://en.wikipedia.org/wiki/Model-view-controller) design meta-pattern. This is a JavaScript port of the [AS3 reference implementation of the MultiCore Version](https://github.com/PureMVC/puremvc-as3-multicore-framework/wiki). It supports [modular programming](http://en.wikipedia.org/wiki/Modular_programming) through the use of [Multiton](http://en.wikipedia.org/wiki/Multiton) Core actors.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && npm run watch",
+    "watch": "watchify --poll=300 --fast -e src/index.js -d -t babelify -o build/puremvc.js -v",
+    "build": "browserify --fast -e src/index.js -d -t babelify -o build/puremvc.js",
+    "build-lib": "babel src -d build",
+    "dev": "babel-node src/index.js",
+    "app": "babel-node examples/app/index.js",
+    "dist": "BABEL_ENV=production browserify -e src/index.js -t babelify -o bin/puremvc.js",
+    "dist-lib": "BABEL_ENV=production babel src -d bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soenkekluth/puremvc-js-multicore-framework.git"
+  },
+  "author": "Sönke Kluth <soenke.kluth@gmail.com> (http://soenkekluth.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soenkekluth/puremvc-js-multicore-framework/issues"
+  },
+  "homepage": "https://github.com/soenkekluth/puremvc-js-multicore-framework#readme",
+  "devDependencies": {
+    "babel-cli": "6.10.1",
+    "babel-core": "6.10.4",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-transform-class-constructor-call": "6.8.0",
+    "babel-plugin-transform-class-properties": "6.10.2",
+    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-plugin-transform-es2015-classes": "6.9.0",
+    "babel-plugin-transform-proto-to-assign": "6.9.0",
+    "babel-plugin-transform-remove-console": "6.8.0",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-stage-0": "6.5.0",
+    "babelify": "7.3.0",
+    "browserify": "13.0.1",
+    "concurrently": "2.1.0",
+    "mocha": "2.5.3",
+    "should": "9.0.2",
+    "watchify": "3.7.0"
+  }
+}
