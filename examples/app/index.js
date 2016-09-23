@@ -1,4 +1,4 @@
-import Facade from '../../dist/puremvc'
+import { Facade } from '../../bin/puremvc';
 
 console.log(Facade);
 

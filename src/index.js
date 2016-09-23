@@ -11,7 +11,7 @@ import Observer from './patterns/observer/Observer';
 import Proxy from './patterns/proxy/Proxy';
 
 
-export default {
+const PureMVC = {
   Model,
   View,
   Controller,
@@ -25,15 +25,4 @@ export default {
   Proxy
 }
 
-
-// export const Model
-// export const View
-// export const Controller
-// export const MacroCommand
-// export const SimpleCommand
-// export const Facade
-// export const Mediator
-// export const Notification
-// export const Notifier
-// export const Observer
-// export const Proxy
+module.exports = PureMVC;
